@@ -29,13 +29,8 @@ with open(budgetdata_csv) as CSVFile:
     # creating index that apppend data will go for variable
     change_profit_loss = []
 
-    # creating dictionary variable
-    # change_profit_loss_Dict = {}
-
     # setting initial varibale for average
     average = 0
-
-
     
     # setting for loop to look at each row
     for row in csvReader:
@@ -59,13 +54,11 @@ with open(budgetdata_csv) as CSVFile:
     
 avg_change = (sum((change_profit_loss[1:])))/(len(change_profit_loss[1:]))
         
-out_file = open('Pybank.txt', 'w')
+out_file = open("./Analysis/Pybank.txt", 'w')
 
 
 out_file.write(f"Financial Analysis\n\n-------------------------------\n\nTotal Months: {totalmonths}\n\nTotal: ${round(total)}\n\nAverage Change : ${round(avg_change, 2)}\n\nGreatest Increase in Profits: {monthprofitmost} (${round(mostprofit)})\n\nGreatest Decrease in Profits: {monthlossmost} (${round(mostlosses)})")
 
-#out_file.write(f"{round(avg_change, 2)}%")
 
-#out_file.write(f"round")
 out_file.close()
 
