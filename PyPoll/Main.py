@@ -18,7 +18,7 @@ with open(ElectionData_csv) as csvfile:
     Winner = ''
     body = []
 
-    out_file = open('PyPoll.txt', 'w')
+    out_file = open("./Analysis/PyPoll.txt", "w")
     for row in csvReader:
         Number_voters = Number_voters + 1
 
@@ -40,15 +40,7 @@ with open(ElectionData_csv) as csvfile:
             Highest_count = y
             Winner = x
 
-    #print({body})
-    
-    #out_file = open('PyPoll.txt', 'w')
 
-    print(Number_voters)
-    print(List_of_Candidates)
-    print(Vote_count_Dict)
-    print(Per_Vote_Dict)
-    print(Winner)
     
     out_file.write(f"\n\n")
     out_file.write(f"Election Results")
@@ -70,11 +62,6 @@ with open(ElectionData_csv) as csvfile:
     out_file.write(f"Winner: {Winner}")
     out_file.write(f"\n\n")
     out_file.write(f"--------------------")
-    out_file.write(f"\n\n")
 
-    out_file.close()
 
- 
-    print(f"Vote count: Charles {Vote_count_Dict[row[2]]}")
-    #print(f"Vote count: Charles {Vote_count_Dict[1]}")
-    print(f"Vote count: Charles {Vote_count_Dict['Charles Casper Stockham']}")
+
